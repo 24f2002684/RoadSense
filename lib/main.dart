@@ -14,9 +14,25 @@ class RoadSenseApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'RoadSense',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: Color(0xFF0A0E21),
+        primaryColor: Color(0xFF00E5FF),
+        fontFamily: 'Roboto',
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      ),
       home: HomeScreen(),
     );
+
   }
 }
 
@@ -26,53 +42,69 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("RoadSense"),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 12),
-            child: Icon(Icons.verified, color: Colors.white),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFF0A0E21), Color(0xFF112240)],
           ),
-        ],
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.aod, size: 80, color: Colors.blue),
-            SizedBox(height: 20),
-            Text(
-              "AI‑Powered Road Safety",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
+        ),
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.all(24),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.auto_awesome, size: 90, color: Color(0xFF00E5FF)),
+                SizedBox(height: 20),
+                Text(
+                  "RoadSense",
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  "AI‑Powered Road Intelligence",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white70, fontSize: 16),
+                ),
+                SizedBox(height: 40),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF00E5FF),
+                    foregroundColor: Colors.black,
+                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  child: Text(
+                    "START DRIVE MODE",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.1,
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => DetectionScreen()),
+                    );
+                  },
+                ),
+              ],
             ),
-            SizedBox(height: 10),
-            Text(
-              "Detecting potholes & unsafe road conditions using AI",
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.grey[700]),
-            ),
-            SizedBox(height: 30),
-            ElevatedButton.icon(
-              icon: Icon(Icons.play_arrow),
-              label: Text("Start Drive Mode"),
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 14, horizontal: 20),
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => DetectionScreen()),
-                );
-              },
-            ),
-          ],
+          ),
         ),
       ),
     );
   }
 }
+
 
 
 class DetectionScreen extends StatelessWidget {
@@ -85,71 +117,96 @@ class DetectionScreen extends StatelessWidget {
     String severity = "High";
     int healthScore = 35;
 
-    Color severityColor = severity == "High" ? Colors.red : Colors.orange;
+    Color accentColor = Color(0xFF00E5FF);
 
     return Scaffold(
-      appBar: AppBar(title: Text("Detection Result")),
+      appBar: AppBar(title: Text("AI Detection"), centerTitle: true),
       body: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Icon(Icons.warning, color: severityColor, size: 50),
-                    SizedBox(height: 10),
-                    Text(
-                      detectedType,
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+            /// 🔹 CENTERED RESULT CARD
+            Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: 380, // controls card width
+                ),
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Color(0xFF112240),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: accentColor.withOpacity(0.35),
+                        blurRadius: 25,
+                        spreadRadius: 2,
                       ),
-                    ),
-                    SizedBox(height: 6),
-                    Chip(
-                      label: Text("Severity: $severity"),
-                      // ignore: deprecated_member_use
-                      backgroundColor: severityColor.withOpacity(0.2),
-                    ),
-                    SizedBox(height: 12),
-                    Text(
-                      "Road Health Score",
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    SizedBox(height: 6),
-                    Text(
-                      "$healthScore / 100",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.warning_amber_rounded,
+                        size: 55,
+                        color: accentColor,
                       ),
-                    ),
-                  ],
+                      SizedBox(height: 12),
+                      Text(
+                        detectedType,
+                        style: TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      Text(
+                        "Severity: $severity",
+                        style: TextStyle(color: Colors.white70, fontSize: 15),
+                      ),
+                      SizedBox(height: 16),
+                      Text(
+                        "Road Health Score",
+                        style: TextStyle(color: Colors.white54),
+                      ),
+                      SizedBox(height: 6),
+                      Text(
+                        "$healthScore / 100",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: accentColor,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-            SizedBox(height: 25),
-            ElevatedButton.icon(
-              icon: Icon(Icons.map),
-              label: Text("View on Map"),
-              onPressed: () {
+
+            SizedBox(height: 35),
+
+            /// 🔹 VIEW MAP BUTTON
+            futuristicButton(
+              icon: Icons.map,
+              text: "VIEW MAP",
+              onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (_) => MapScreen()),
                 );
               },
             ),
-            SizedBox(height: 10),
-            ElevatedButton.icon(
-              icon: Icon(Icons.smart_toy),
-              label: Text("AI Insight"),
-              onPressed: () {
+
+            SizedBox(height: 12),
+
+            /// 🔹 AI INSIGHT BUTTON
+            futuristicButton(
+              icon: Icons.smart_toy,
+              text: "AI INSIGHT",
+              onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (_) => InsightScreen()),
@@ -162,6 +219,26 @@ class DetectionScreen extends StatelessWidget {
     );
   }
 }
+
+
+Widget futuristicButton({
+  required IconData icon,
+  required String text,
+  required VoidCallback onTap,
+}) {
+  return ElevatedButton.icon(
+    icon: Icon(icon),
+    label: Text(text),
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Color(0xFF00E5FF),
+      foregroundColor: Colors.black,
+      padding: EdgeInsets.symmetric(vertical: 14, horizontal: 24),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+    ),
+    onPressed: onTap,
+  );
+}
+
 
 
 class MapScreen extends StatelessWidget {
@@ -199,45 +276,41 @@ class InsightScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("AI Insight (Gemini)")),
+      appBar: AppBar(title: Text("AI Insight")),
       body: Padding(
         padding: EdgeInsets.all(16),
-        child: Card(
-          elevation: 4,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Color(0xFF112240),
+            borderRadius: BorderRadius.circular(20),
           ),
-          child: Padding(
-            padding: EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Icon(Icons.smart_toy, color: Colors.blue),
-                    SizedBox(width: 8),
-                    Text(
-                      "AI Recommendation",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 12),
-                Text(
-                  "Repeated pothole detections indicate severe road degradation. "
-                  "Temporary repairs may fail under traffic and rainfall. "
-                  "A permanent resurfacing solution is recommended to improve safety.",
-                  style: TextStyle(fontSize: 15),
-                ),
-              ],
-            ),
+          padding: EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.auto_awesome, color: Color(0xFF00E5FF)),
+                  SizedBox(width: 8),
+                  Text(
+                    "Gemini Insight",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              SizedBox(height: 16),
+              Text(
+                "Repeated pothole detections indicate severe road degradation. "
+                "Temporary repairs are likely to fail under traffic and rainfall. "
+                "Permanent resurfacing is recommended for long‑term safety.",
+                style: TextStyle(fontSize: 15, color: Colors.white70),
+              ),
+            ],
           ),
         ),
       ),
     );
   }
 }
+
 
