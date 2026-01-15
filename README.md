@@ -18,6 +18,7 @@ model to a proactive, data-driven approach that improves safety for daily
 commuters and enables smarter decisions for authorities.
 
 ----------------------------------------------------
+
 1. PROBLEM STATEMENT
 
 ----------------------------------------------------
@@ -27,6 +28,7 @@ Existing road maintenance systems rely heavily on manual inspections and
 public complaints, resulting in delayed repairs and increased safety risks.
 
 ----------------------------------------------------
+
 1. PROPOSED SOLUTION
 
 ----------------------------------------------------
@@ -38,6 +40,7 @@ By continuously monitoring road conditions, the system enables preventive
 maintenance instead of reactive repairs.
 
 ----------------------------------------------------
+
 1. KEY FEATURES
 
 ----------------------------------------------------
@@ -50,6 +53,7 @@ maintenance instead of reactive repairs.
 - Simulation mode for rapid prototyping
 
 ----------------------------------------------------
+
 1. SYSTEM ARCHITECTURE
 
 ----------------------------------------------------
@@ -71,6 +75,7 @@ Flutter Mobile Application
 Google Maps Visualization + AI Insights
 
 ----------------------------------------------------
+
 1. MACHINE LEARNING COMPONENT
 
 ----------------------------------------------------
@@ -91,6 +96,7 @@ The trained model is saved and is ready for deployment on Google Vertex AI
 for scalable inference.
 
 ----------------------------------------------------
+
 1. APPLICATION DETAILS
 
 ----------------------------------------------------
@@ -105,6 +111,7 @@ For the prototype stage, ML outputs are simulated, while the ML model itself
 is real and trained using TensorFlow.
 
 ----------------------------------------------------
+
 1. GOOGLE MAPS INTEGRATION
 
 ----------------------------------------------------
@@ -115,6 +122,7 @@ Detected road hazards are shown as markers on Google Maps, allowing:
 - Future expansion to heatmaps and clustering
 
 ----------------------------------------------------
+
 1. AI (GEMINI) INSIGHTS
 
 ----------------------------------------------------
@@ -126,6 +134,7 @@ Example:
 after rainfall. Permanent resurfacing is recommended."
 
 ----------------------------------------------------
+
 1. SCREENSHOTS
 
 ----------------------------------------------------
@@ -138,6 +147,7 @@ after rainfall. Permanent resurfacing is recommended."
 - Screenshot 5: ML Training Output (TensorFlow)
 
 ----------------------------------------------------
+
 1. DEMO & RESOURCES
 
 ----------------------------------------------------
@@ -148,6 +158,7 @@ Project Files & Screenshots:
 [Add Google Drive link here]
 
 ----------------------------------------------------
+
 1. WHY ROAD SENSE IS UNIQUE
 
 ----------------------------------------------------
@@ -159,6 +170,7 @@ Project Files & Screenshots:
 - Designed for scalability in smart city environments
 
 ----------------------------------------------------
+
 1. TEAM DETAILS
 
 ----------------------------------------------------
@@ -172,6 +184,7 @@ Team Members:
 - Suhail Akthar
 
 ----------------------------------------------------
+
 1. FUTURE SCOPE
 
 ----------------------------------------------------
