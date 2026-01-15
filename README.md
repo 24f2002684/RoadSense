@@ -1,6 +1,5 @@
-====================================================
+
 ROAD SENSE – AI POWERED ROAD SAFETY PLATFORM
-====================================================
 
 Project Name: RoadSense
 Team Name: Tech Titans
