@@ -133,16 +133,24 @@ Example:
 "Repeated sand-filled repairs indicate temporary maintenance that may fail
 after rainfall. Permanent resurfacing is recommended."
 
-----------------------------------------------------
 
-1. SCREENSHOTS
+## App Screenshots
 
-----------------------------------------------------
-<img width="399" height="869" alt="image" src="https://github.com/user-attachments/assets/30cf05dd-8173-4185-9087-45cc420863b2" />
-<img width="399" height="874" alt="image" src="https://github.com/user-attachments/assets/d63f5635-7d63-402c-9a48-5cbd794694e3" />
-<img width="399" height="873" alt="image" src="https://github.com/user-attachments/assets/cc2eec9b-4bb8-4f0e-938b-a75d7de6373a" />
-<img width="395" height="867" alt="image" src="https://github.com/user-attachments/assets/5e9120e8-5e60-4a7d-970a-300bd220aca9" />
-<img width="1027" height="1015" alt="image" src="https://github.com/user-attachments/assets/227e684f-c488-4928-aa8a-385cdfecec68" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/30cf05dd-8173-4185-9087-45cc420863b2" width="220" />
+  <img src="https://github.com/user-attachments/assets/d63f5635-7d63-402c-9a48-5cbd794694e3" width="220" />
+  <img src="https://github.com/user-attachments/assets/cc2eec9b-4bb8-4f0e-938b-a75d7de6373a" width="220" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5e9120e8-5e60-4a7d-970a-300bd220aca9" width="220" />
+</p>
+
+### Map Visualization
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/227e684f-c488-4928-aa8a-385cdfecec68" width="700" />
+</p>
 
 - Screenshot 1: Home Screen
 - Screenshot 2: Detection Result Screen
@@ -152,17 +160,17 @@ after rainfall. Permanent resurfacing is recommended."
 
 ----------------------------------------------------
 
-1. DEMO & RESOURCES
+## 🔗 Project Resources
 
-----------------------------------------------------
-Video Explanation: (3 minute video)
-[[Google Drive link here]](https://drive.google.com/file/d/1wPc7Tu-XwXQMh8vDOqSGfAAJpe7IySYR/view?usp=sharing)
+- **Video Explanation (3 mins):**  
+  [Watch Demo Video](https://drive.google.com/file/d/1wPc7Tu-XwXQMh8vDOqSGfAAJpe7IySYR/view)
 
-One Page Description of our Solution:
-https://docs.google.com/document/d/1EtHM96PQpv6MSgCQjxGFsAxfWIQLc27FAbBfrFFclb4/edit?usp=sharing
+- **One‑Page Project Summary:**  
+  [View Solution Overview](https://docs.google.com/document/d/1EtHM96PQpv6MSgCQjxGFsAxfWIQLc27FAbBfrFFclb4/edit)
 
-Google Colab Notebook:
-https://colab.research.google.com/drive/1pjVMO2MlldG3xHljRKC4FbtiQHvmnMqC?usp=sharing
+- **Machine Learning Notebook (TensorFlow):**  
+  [Open Google Colab Notebook](https://colab.research.google.com/drive/1pjVMO2MlldG3xHljRKC4FbtiQHvmnMqC)
+
 
 ----------------------------------------------------
 
